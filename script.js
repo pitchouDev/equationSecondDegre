@@ -34,6 +34,8 @@ document.addEventListener("click", (event) => {
         else if (delta === 0) {
             xUn = (- b - Math.sqrt(delta)) / (2 * a)
             reponseXUn.innerText = `x = ${xUn}`
+            reponseXDeux.innerText = ""
+
         } else {
             xUn = (- b - Math.sqrt(delta)) / (2 * a)
             xDeux = (- b + Math.sqrt(delta)) / (2 * a)
