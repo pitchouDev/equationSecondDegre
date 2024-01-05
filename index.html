@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equation de second degré</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="boite">
-        <input type="text" id="a" class="input">
+        <input type="number" id="a" class="input">
         <p>x² +</p>
-        <input type="text" id="b" class="input">
+        <input type="number" id="b" class="input">
         <p> x +</p>
-        <input type="text" id="c" class="input">
+        <input type="number" id="c" class="input">
         <p>= 0</p>  
     </div>
+    <button id="bouton">calculer</button>
     <div id="reponse">
-        <p>x = </p>
-        <p>x = </p>
+        <p id="delta"></p>
+        <p id="xUn"></p>
+        <p id="xDeux"></p>
     </div> 
 </body>
 </html>
