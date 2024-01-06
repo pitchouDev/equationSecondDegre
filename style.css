@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 * {
     font-family: 'Rubik', sans-serif;
+    margin: 0;
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 4vh;
 }
 
 .boite {
@@ -30,9 +32,13 @@ body {
     text-align: center;
 }
 
-#reponse {
+#reponses {
     font-size: 2.5em;
     text-align: center;
+}
+
+.reponse {
+    padding: 20px;
 }
 
 button {
@@ -52,13 +58,19 @@ button:active {
 @media screen and (max-width: 600px){
     .boite {
         font-size: 1.5em;
+        gap: 10px;
     }
-    #reponse {
+    #reponses {
         font-size: 1.5em;
     }
 
     .input {
         width: 50px;
         height: 40px;
+    }
+    button {
+        width: 170px;
+        height:40px;
+        font-size: 1.3em;
     }
 }
