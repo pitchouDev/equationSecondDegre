@@ -32,11 +32,13 @@ document.addEventListener("click", (event) => {
         }
         else if (delta === 0) {
             xUn = (- b - Math.sqrt(delta)) / (2 * a)
-            afficherUneSolution(xUn)
+            afficherPremiereSolution(a, b, delta, xUn)
+
         } else {
             xUn = (- b - Math.sqrt(delta)) / (2 * a)
             xDeux = (- b + Math.sqrt(delta)) / (2 * a)
-            afficherDeuxSolution(xUn, xDeux)
+            afficherPremiereSolution(a, b, delta, xUn)
+            afficherDeuxiemeSolution(a, b, delta, xDeux)
 
         }
 
@@ -48,13 +50,22 @@ function afficherAucuneSolution() {
     reponseXDeux.innerText = ""
 }
 
-
-function afficherUneSolution(xUn) {
-    reponseXUn.innerText = `x = ${xUn}`
-    reponseXDeux.innerText = ""
+function afficherPremiereSolution(a, b, delta, xUn) {
+    if (Number.isInteger(xUn)) {
+        reponseXUn.innerText = `x = ${xUn}`
+    } else if(Number.isInteger(Math.sqrt(delta))) {
+        reponseXUn.innerHTML = `x = <math><mfrac><mn>${- b - Math.sqrt(delta)}</mn><mn>${2 * a}</mn></mfrac></math>`
+    } else {
+        reponseXUn.innerHTML = `x = <math><mfrac><mn>${-b} - <msqrt><mi>${delta}</mi></msqrt></mn><mn>${2 * a}</mn></mfrac></math>`
+    }
 }
 
-function afficherDeuxSolution(xUn, xDeux) {
-    reponseXUn.innerText = `x = ${xUn}`
-    reponseXDeux.innerText = `x = ${xDeux}`
+function afficherDeuxiemeSolution(a, b, delta, xDeux) {
+    if (Number.isInteger(xDeux)) {
+        reponseXDeux.innerText = `x = ${xDeux}`
+    } else if( Number.isInteger(Math.sqrt(delta))) {
+        reponseXDeux.innerHTML = `x = <math><mfrac><mn>${- b + Math.sqrt(delta)}</mn><mn>${2 * a}</mn></mfrac></math>`
+    } else {
+        reponseXDeux.innerHTML = `x = <math><mfrac><mn>${-b} + <msqrt><mi>${delta}</mi></msqrt></mn><mn>${2 * a}</mn></mfrac></math>`
+    }
 }
