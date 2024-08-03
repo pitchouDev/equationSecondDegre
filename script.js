@@ -28,24 +28,33 @@ document.addEventListener("click", (event) => {
         reponseDelta.innerText = `Δ = ${delta}`
 
         if (delta < 0) {
-            reponseXUn.innerText = "Aucune solution dans ℝ"
-            reponseXDeux.innerText = ""
+            afficherAucuneSolution()
         }
         else if (delta === 0) {
             xUn = (- b - Math.sqrt(delta)) / (2 * a)
-            reponseXUn.innerText = `x = ${xUn}`
-            reponseXDeux.innerText = ""
-
+            afficherUneSolution(xUn)
         } else {
             xUn = (- b - Math.sqrt(delta)) / (2 * a)
             xDeux = (- b + Math.sqrt(delta)) / (2 * a)
-            reponseXUn.innerText = `x = ${xUn}`
-            reponseXDeux.innerText = `x = ${xDeux}`
+            afficherDeuxSolution(xUn, xDeux)
 
         }
 
     }
 })
 
+function afficherAucuneSolution() {
+    reponseXUn.innerText = "Aucune solution dans ℝ"
+    reponseXDeux.innerText = ""
+}
 
 
+function afficherUneSolution(xUn) {
+    reponseXUn.innerText = `x = ${xUn}`
+    reponseXDeux.innerText = ""
+}
+
+function afficherDeuxSolution(xUn, xDeux) {
+    reponseXUn.innerText = `x = ${xUn}`
+    reponseXDeux.innerText = `x = ${xDeux}`
+}
